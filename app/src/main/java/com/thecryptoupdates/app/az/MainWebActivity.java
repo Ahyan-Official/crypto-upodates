@@ -44,6 +44,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -54,13 +55,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.gms.ads.AdView;
+import com.google.android.material.navigation.NavigationView;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class MainWebActivity extends AppCompatActivity {
+public class MainWebActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     //initializing WebView
     private WebView mwebView;
@@ -80,6 +82,7 @@ public class MainWebActivity extends AppCompatActivity {
     private static final int FILECHOOSER_RESULTCODE = 1;
 
     RelativeLayout im;
+    ActionBarDrawerToggle toggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,7 +110,7 @@ public class MainWebActivity extends AppCompatActivity {
 
         ActionBar ab = getSupportActionBar();
         if (ab != null) {
-            ab.setTitle((Html.fromHtml("<font color=\"#ffffff\">" + "KEYLOAN NG" + "</font>")));
+            ab.setTitle((Html.fromHtml("<font color=\"#ffffff\">" + "The Crypto Updates" + "</font>")));
         }
 
 
@@ -138,6 +141,37 @@ public class MainWebActivity extends AppCompatActivity {
             }
         });
 
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+
+
+
+
+
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+
+
+        toggle.setToolbarNavigationClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+                if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    drawerLayout.closeDrawer(GravityCompat.START);
+
+                } else {
+                    //open drawer
+                    drawerLayout.openDrawer(GravityCompat.START);
+
+                }
+            }
+        });
 
 
 
@@ -967,5 +1001,31 @@ public class MainWebActivity extends AppCompatActivity {
     }
 
 
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+        swipe.setRefreshing(true);
+        if (id == R.id.News) {
+            mwebView.loadUrl("https://www.thecryptoupdates.com/category/news/");
+        } else if (id == R.id.Tech) {
+            mwebView.loadUrl("https://www.thecryptoupdates.com/category/tech-news/");
+        }  else if (id == R.id.Blckpedia) {
+            mwebView.loadUrl("https://www.thecryptoupdates.com/category/blockpedia/");
+        } else if (id == R.id.Telegram) {
+            mwebView.loadUrl("https://www.thecryptoupdates.com/top-crypto-telegram-channels/");
+        } else if (id == R.id.Sponsored) {
+            mwebView.loadUrl("https://www.thecryptoupdates.com/category/sponsored-post/");
+        } else if (id == R.id.Write) {
+            mwebView.loadUrl("https://www.thecryptoupdates.com/write-for-us/");
+        } else if (id == R.id.Our) {
+            mwebView.loadUrl("https://www.thecryptoupdates.com/our-partners/");
+        }
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+
+        return true;
+    }
 
 }

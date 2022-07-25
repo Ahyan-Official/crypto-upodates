@@ -2,6 +2,8 @@
 
 
     <string name="app_name">The Crypto Updates</string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
 
 
 </resources>

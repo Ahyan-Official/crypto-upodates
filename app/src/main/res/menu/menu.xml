@@ -1,0 +1,32 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/News"
+            android:title="News" />
+        <item
+            android:id="@+id/Tech"
+            android:title="Tech News" />
+
+
+        <item
+            android:id="@+id/Blckpedia"
+            android:title="Blckpedia" />
+
+        <item
+            android:id="@+id/Telegram"
+            android:title="Telegram Channels" />
+        <item
+            android:id="@+id/Sponsored"
+            android:title="Sponsored Post" />
+        <item
+            android:id="@+id/Write"
+            android:title="Write for us" />
+        <item
+            android:id="@+id/Our"
+            android:title="Our Partners" />
+    </group>
+
+
+
+</menu>
