@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#FFFFFF"
     android:gravity="bottom"
+    android:background="#0A1426"
+
     android:orientation="vertical"
     android:paddingBottom="@dimen/_10sdp"
     android:paddingLeft="@dimen/_10sdp"
@@ -14,19 +15,19 @@
 
 
     <ImageView
-        android:layout_width="@dimen/_70sdp"
+        android:layout_width="@dimen/_100sdp"
         android:layout_height="@dimen/_70sdp"
-        android:background="#fff"
         android:layout_marginTop="@dimen/_40sdp"
-        android:src="@drawable/cap_871"/>
+        android:src="@drawable/blockde"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:text="The Crypto Updates"
+        android:visibility="gone"
+        android:text="The Blockopedia"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="#000000" />
+        android:textColor="#FFFFFF" />
 
 
 

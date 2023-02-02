@@ -2,7 +2,6 @@ package com.thecryptoupdates.app.az;
 
 import android.app.Application;
 
-import com.google.android.gms.ads.MobileAds;
 
 
 public class MyApplication extends Application {
@@ -28,7 +27,6 @@ public class MyApplication extends Application {
 
         mInstense = this;
 
-        MobileAds.initialize(this);
 
 
 //        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE);

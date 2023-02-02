@@ -6,22 +6,22 @@
             android:title="News" />
         <item
             android:id="@+id/Tech"
-            android:title="Tech News" />
+            android:title="Crypto 101" />
 
 
         <item
             android:id="@+id/Blckpedia"
-            android:title="Blckpedia" />
+            android:title="Price Tracker" />
 
         <item
             android:id="@+id/Telegram"
-            android:title="Telegram Channels" />
+            android:title="Staking" />
         <item
             android:id="@+id/Sponsored"
-            android:title="Sponsored Post" />
+            android:title="Tools"/>
         <item
             android:id="@+id/Write"
-            android:title="Write for us" />
+            android:title="Web 3" />
         <item
             android:id="@+id/Our"
             android:title="Our Partners" />

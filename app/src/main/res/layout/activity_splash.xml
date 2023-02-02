@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#0A1426"
     tools:context=".SplashActivity">
 
 
    <ImageView
        android:layout_width="match_parent"
        android:layout_height="match_parent"
-       android:src="@drawable/cap_871"
-       android:layout_margin="@dimen/_60sdp"
+       android:src="@drawable/blockde"
+       android:layout_margin="@dimen/_70sdp"
        android:layout_centerHorizontal="true"
        android:scaleType="fitCenter"
        android:layout_centerVertical="true"

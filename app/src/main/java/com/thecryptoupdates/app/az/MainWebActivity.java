@@ -54,7 +54,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.google.android.gms.ads.AdView;
 import com.google.android.material.navigation.NavigationView;
 
 import java.io.File;
@@ -106,12 +105,11 @@ public class MainWebActivity extends AppCompatActivity implements NavigationView
 
 
 
-        AdView adView = (AdView) findViewById(R.id.adView2);
 
-        ActionBar ab = getSupportActionBar();
-        if (ab != null) {
-            ab.setTitle((Html.fromHtml("<font color=\"#ffffff\">" + "The Crypto Updates" + "</font>")));
-        }
+//        ActionBar ab = getSupportActionBar();
+//        if (ab != null) {
+//            ab.setTitle((Html.fromHtml("<font color=\"#ffffff\">" + "The Crypto Updates" + "</font>")));
+//        }
 
 
 
@@ -327,18 +325,11 @@ public class MainWebActivity extends AppCompatActivity implements NavigationView
 
 
 
-        if ( !isNetworkAvailable() ) {
-            mwebView.getSettings().setCacheMode( WebSettings.LOAD_DEFAULT );
-
-        }else{
-
-            mwebView.getSettings().setCacheMode( WebSettings.LOAD_DEFAULT );
-
-            mwebView.loadUrl("https://www.thecryptoupdates.com/");
-
-        }
 
 
+        mwebView.getSettings().setCacheMode( WebSettings.LOAD_CACHE_ELSE_NETWORK );
+
+        mwebView.loadUrl("https://theblockopedia.com/");
 
 
 
@@ -659,7 +650,7 @@ public class MainWebActivity extends AppCompatActivity implements NavigationView
                         if (mwebView != null) {
 
 
-                            mwebView.loadUrl("https://www.thecryptoupdates.com/");
+                            mwebView.loadUrl("https://theblockopedia.com/");
                             isWriteStoragePermissionGranted();
 
                         }
@@ -1008,19 +999,17 @@ public class MainWebActivity extends AppCompatActivity implements NavigationView
         int id = item.getItemId();
         swipe.setRefreshing(true);
         if (id == R.id.News) {
-            mwebView.loadUrl("https://www.thecryptoupdates.com/category/news/");
+            mwebView.loadUrl("https://theblockopedia.com/category/news/");
         } else if (id == R.id.Tech) {
-            mwebView.loadUrl("https://www.thecryptoupdates.com/category/tech-news/");
+            mwebView.loadUrl("https://theblockopedia.com/category/crypto-101/");
         }  else if (id == R.id.Blckpedia) {
-            mwebView.loadUrl("https://www.thecryptoupdates.com/category/blockpedia/");
+            mwebView.loadUrl("https://theblockopedia.com/price-tracker/");
         } else if (id == R.id.Telegram) {
-            mwebView.loadUrl("https://www.thecryptoupdates.com/top-crypto-telegram-channels/");
+            mwebView.loadUrl("https://theblockopedia.com/category/guides/");
         } else if (id == R.id.Sponsored) {
-            mwebView.loadUrl("https://www.thecryptoupdates.com/category/sponsored-post/");
+            mwebView.loadUrl("https://theblockopedia.com/calculator/");
         } else if (id == R.id.Write) {
-            mwebView.loadUrl("https://www.thecryptoupdates.com/write-for-us/");
-        } else if (id == R.id.Our) {
-            mwebView.loadUrl("https://www.thecryptoupdates.com/our-partners/");
+            mwebView.loadUrl("https://theblockopedia.com/category/web-3/");
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
